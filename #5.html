@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        let x = prompt("What is Your Name?");
+        let y = prompt("Where do you live?");
+        let z = prompt("Who old are you?");
+        if(x == null || y == null || z == null){
+            alert("Please fill all the fields");
+        }
+        else{
+            document.write("Hello " + x + "<br>" + "You live in " + y + "<br>" + "You are " + z + " Years old");
+        }
+    </script>
+</body>
+</html>

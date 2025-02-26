@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Simple to-do list app</title>
+</head>
+<body>
+    <input type="text" id="task" placeholder="Enter task">
+    <button onclick="addTask()">Add task</button>
+    <ul id="taskList"></ul>
+    <script>
+        function addTask() {
+            var task = document.getElementById('task').value;
+            var taskList = document.getElementById('taskList');
+            var li = document.createElement('li');
+            li.appendChild(document.createTextNode(task));
+            taskList.appendChild(li);
+        }
+    </script>
+</body>
+</html>

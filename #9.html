@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .lock{
+            justify-self: center;
+            width: 30%;
+            height: 40vh;
+            background-color: aqua;
+            text-align: center;
+            margin-top: 100px;
+        }
+        #name{
+            padding: 10px;
+            margin: 10px;
+        }
+        #password{
+            padding: 10px;
+            margin: 10px;
+        }
+        #btn{
+            padding: 10px;
+            margin: 10px;
+        }
+    </style>
+</head>
+<body>
+    <div class="lock">
+    <h1>Site is Lock Please Unlock it.</h1>
+    <input type="text" id="name" placeholder="Website Name"><br>
+    <input type="password" id="password" placeholder="Enter Password"><br>
+    <button onclick="myfunction()" id="btn">Submit</button>
+    </div>
+    <div id="lock" style="display: none;">
+        <h1>It is Protected by Password.</h1>
+        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Totam rem unde, vitae exercitationem odit quis numquam voluptas vel. Tenetur eaque esse explicabo nemo! Consequatur corporis aspernatur ad fugit ipsa provident.</p>
+    </div>
+    <script>
+        let password = "1234";
+        let name = "WorldWondersGuide";
+        function myfunction(){
+            let user = document.getElementById('name').value;
+            let pass = document.getElementById('password').value;
+            let lock = document.getElementById('lock');
+            let key = document.getElementsByClassName('lock');
+            if(user === name && pass === password){
+                lock.style.display = 'block';
+                key[0].style.display = 'none';
+                // document.open("https://youmansoor.github.io/file-test.github.io/","","width=900,height=900");
+                // document.write('You are Successfully Logged in.');
+            }
+            else if(user === "Azhaan" && pass === "Admin123"){
+                lock.style.display = 'block';
+                key[0].style.display = 'none';
+            }
+            else{
+                alert('Wrong Password');
+            }
+        }
+    </script>
+</body>
+</html>

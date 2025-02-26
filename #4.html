@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Website Structure</title>
+    <style>
+        body {
+            margin: 0;
+            padding: 0;
+        }
+        #header{
+            background-color: #f33f;
+            width: 100%;
+            padding: 0.1vh;
+            margin: 0;
+        }
+        #navbar{
+            background-color: #ff3;
+            width: 100%;
+            margin: 0;
+        }
+        #content{
+            width: 100%;
+            display: flex;
+        }
+        .main-content{
+            background-color: #2f3;
+            width: 60%;
+            margin: 0;
+        }
+        .left-content{
+            background-color: #567;
+            width: 20%;
+            float: left;
+        }
+        .right-content{
+            background-color: #567;
+            width: 20%;
+            float: right;
+        }
+        #footer{
+            background-color: #f54;
+            width: 100%;
+            padding: 0.1vh;
+            margin: 0;
+        }
+    </style>
+</head>
+<body>
+    <section>
+        <div id="header">
+            <h1>Heading</h1>
+        </div>
+        <div id="navbar">
+            <nav style="padding: 0.5vh;">
+                <ul style="display: flex; justify-content: space-around; list-style-type: none;">
+                    <li>Home</li>
+                    <li>About</li>
+                    <li>Services</li>
+                    <li>Contact</li>
+                </ul>
+            </nav>
+        </div>
+    </section>
+    <section id="content">
+        <div class="left-content">
+            <h3>left-content</h3>
+            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Officiis provident explicabo facere eius iure sint odio accusantium! Dolor earum esse magnam veniam ipsum maiores, sequi architecto voluptatibus, quia odit explicabo!</p>
+        </div>
+        <div class="main-content">
+            <h2>Main Content</h2>
+            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Magni, facere saepe aliquid amet inventore qui sapiente nobis, nemo, tempora rerum magnam. Necessitatibus, sit repellendus? Quas voluptas sequi fugiat id ullam.</p>
+        </div>
+        <div class="right-content">
+            <h3>Right-content</h3>
+            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Officiis provident explicabo facere eius iure sint odio accusantium! Dolor earum esse magnam veniam ipsum maiores, sequi architecto voluptatibus, quia odit explicabo!</p>
+        </div>
+    </section>
+    <section>
+        <div id="footer">
+            <h1>Footer</h1>
+        </div>
+    </section>
+    </body>
+</html>

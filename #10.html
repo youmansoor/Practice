@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <button onclick="myfunction()">Submit</button>
+    <script>
+        let name = "Azhaan";
+        let password = "admin";
+        function myfunction(){
+            let user = prompt("Enter Your Username:");
+            let pass = prompt("Enter Your Password:");
+            if(user === name && pass === password){
+                document.open("https://youmansoor.github.io/file-test.github.io/","_blank","width=900,height=900");
+            }
+            else{
+                document.open();
+                document.write("Invalid Username or Password");
+                document.close();
+            }
+        }
+    </script>
+</body>
+</html>

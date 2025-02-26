@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Read More/less</title>
+    <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
+    <style>
+        body{
+            height: 100vh;
+            margin: 0;
+        }
+        .darkmode{
+            background-color: black;
+            color: white;
+        }
+        #more{
+            display: none;
+        }
+        p{
+            border: 1px solid black;
+            position: relative;
+            /* height: 50px; */
+        }
+        button img{
+            width: 50px;
+            background-color: transparent;
+            bottom: 0;
+            right: 0;
+            border: none;
+            padding: 10px 20px;
+            cursor: pointer;
+        }
+    </style>
+</head>
+<body>
+    <button onclick="MyFuntion()"><img src="night-mode.png" alt=""></button>
+    <h1>Read More/less</h1>
+    <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Repellat accusantium consequuntur suscipit laboriosam totam sapiente molestiae quidem error eum, voluptatibus doloremque dolorem necessitatibus. Nobis eum, nemo labore modi repudiandae ut! Lorem ipsum dolor sit amet consectetur adipisicing elit. Nihil saepe inventore fuga ab illum non tenetur dolores, debitis eos sed quas odio! At nam, magnam pariatur obcaecati nihil commodi nulla?<span id="less">...</span><span id="more">Lorem ipsum dolor sit amet consectetur adipisicing elit. Sequi sunt ipsa eligendi at quod consequatur officiis, unde ab voluptate obcaecati consequuntur debitis, molestias architecto. Natus voluptatem vel similique assumenda blanditiis.</span></p>
+    <button onclick="myfuntion()" id="btn">Read More</button>
+<script>
+    function myfuntion(){
+        var dots = document.getElementById('less');
+        var moreText = document.getElementById('more');
+        var btnText = document.getElementById('btn');
+
+        if(dots.style.display === 'none'){
+            dots.style.display = 'inline';
+            btnText.innerHTML = 'Read More';
+            moreText.style.display = 'none';
+    }
+    else{
+        dots.style.display = 'none';
+        btnText.innerHTML = 'Read Less';
+        moreText.style.display = 'inline';
+    }
+}
+    function MyFuntion(){
+    var theme = document.body;
+    theme.classList.toggle('darkmode');
+}
+</script>
+</body>
+</html>
