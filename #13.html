@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        #container{
+            text-align: center;
+            /* margin-top: 200px; */
+            background-color: blue;
+            color: white;
+            padding: 20px;
+            width: 300px;
+            margin: 0 auto;
+            align-items: center;
+        }
+    </style>
+</head>
+<body>
+    <div id="container">
+        <h1>LOCK</h1>
+        <input type="password" id="password" placeholder="Enter Password" maxlength="4">
+        <button onclick="lock()">Enter</button>
+    </div>
+    <script>
+        function lock(){
+            let password = document.getElementById("password").value;
+            if(password === "1234"){
+                window.open("https://youmansoor.github.io/file-test.github.io/","_self");
+            }
+            else if(password === "2134"){
+                window.open("https://www.google.com/","_self");
+            }
+            else{
+                alert("Incorrect Password");
+            }
+        }
+    </script>
+</body>
+</html>
