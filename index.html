@@ -4,10 +4,138 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
+    <style>
+        #container {
+            justify-self: center;
+            display: flex;
+            flex-wrap: wrap;
+        }
+        #btn {
+            padding: 2vh;
+            margin: 2vh;
+            width: 15%;
+            height: 20%;
+        }
+        video {
+            width: 100%;
+            height: 100%;
+        }
+        @media (max-width: 768px) {
+            #container {
+                justify-self: center;
+                margin: 2vh;
+            }
+        }
+    </style>
 </head>
 <body>
-    <a href="http://www.dodear.com/webtv/?serverpath=http://webtv.dodear.asia:88/arydigitalhd/index.m3u8">Ary Digital</a>
-    <a href="http://www.dodear.com/webtv/?serverpath=http://webtv.dodear.asia:88/arynewssd/index.m3u8">Ary News</a>
-    <a href="http://www.dodear.com/webtv/?serverpath=http://webtv.dodear.asia:88/humnewshd/index.m3u8">Hum news</a>
+    <div id="container">
+        <button id="btn"><a href="http://webtv.dodear.asia:88/arydigitalhd/index.m3u8" type="application/x-mpegURL">Ary Digital 2</a></button>
+        <button id="btn" onclick="myfunction()"><a href="http://www.dodear.com/webtv/?serverpath=http://webtv.dodear.asia:88/arydigitalhd/index.m3u8" type="application/x-mpegURL" id="video">Ary Digital</a></button>
+        <button id="btn" onclick=""><a href="http://www.dodear.com/webtv/?serverpath=http://webtv.dodear.asia:88/arynewssd/index.m3u8">Ary News</a></button>
+        <button id="btn" onclick=""><a href="http://www.dodear.com/webtv/?serverpath=http://webtv.dodear.asia:88/humnewshd/index.m3u8">Hum news</a></button>
+        <button id="btn" onclick=""><a href="http://www.dodear.com/webtv/?serverpath=http://webtv.dodear.asia:88/asportssd/index.m3u8">A Sports</a></button>
+
+        <!-- <video id="webtv-player_html5_api" class="vjs-tech" preload="auto" fullscreen="true" vjs-big-play-centered="" data-setup="{&quot;autoplay&quot;: true}" tabindex="-1" role="application" autoplay="" src="blob:http://www.dodear.com/afc4813a-c3e8-48ff-bf11-3f86f0655d81">
+            <source src="http://webtv.dodear.asia:88/arydigitalhd/index.m3u8" type="application/x-mpegURL">
+          </video> -->
+          <video id="webtv-player_html5_api" class="vjs-tech" preload="auto" fullscreen="true" vjs-big-play-centered="" data-setup="{&quot;autoplay&quot;: true}" tabindex="-1" role="application" autoplay="" src="blob:http://www.dodear.com/ef1a7cbe-b9b7-456a-aac6-cd89e9d22184">
+            <source src="http://webtv.dodear.asia:88/arydigitalhd/index.m3u8" type="application/x-mpegURL">
+          </video>
+    </div>
+
+    <script>
+        function myfunction() {
+            let video = document.getElementById("video");
+            video.style.height = "100%"
+        }
+    </script>
 </body>
 </html>
+
+<!-- <!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        body, html {
+            margin: 0;
+            padding: 0;
+            height: 100%;
+            display: flex;
+            flex-direction: column;
+        }
+
+        #container {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            flex-grow: 1;
+            overflow: auto;
+        }
+
+        #btn {
+            padding: 2vh;
+            margin: 2vh;
+            width: 15%;
+            height: 20%;
+        }
+
+        #video-container {
+            display: none;
+            width: 100%;
+            height: 50%;
+            background: black;
+        }
+
+        #video {
+            width: 100%;
+            height: 100%;
+        }
+
+        @media (max-width: 768px) {
+            #container {
+                justify-self: center;
+                margin: 2vh;
+            }
+        }
+
+        #channels {
+            width: 100%;
+            height: 50%;
+            display: flex;
+            justify-content: center;
+            flex-wrap: wrap;
+        }
+    </style>
+</head>
+<body>
+    <div id="video-container">
+        <video id="video" controls autoplay></video>
+    </div>
+    <div id="channels">
+        <button id="btn" onclick="myfunction()"><a href="http://www.dodear.com/webtv/?serverpath=http://webtv.dodear.asia:88/arydigitalhd/index.m3u8"></a>Ary Digital</button>
+        <button id="btn" onclick="myfunction('http://www.dodear.com/webtv/?serverpath=http://webtv.dodear.asia:88/arynewssd/index.m3u8')">Ary News</button>
+        <button id="btn" onclick="myfunction('http://www.dodear.com/webtv/?serverpath=http://webtv.dodear.asia:88/humnewshd/index.m3u8')">Hum News</button>
+        <button id="btn" onclick="myfunction('http://www.dodear.com/webtv/?serverpath=http://webtv.dodear.asia:88/humnewshd/index.m3u8')">A Sports</button>
+        <button id="btn" onclick="myfunction('http://www.dodear.com/webtv/?serverpath=http://webtv.dodear.asia:88/arydigitalhd/index.m3u8')">Ary Digital</button>
+        <button id="btn" onclick="myfunction('http://www.dodear.com/webtv/?serverpath=http://webtv.dodear.asia:88/arynewssd/index.m3u8')">Ary News</button>
+        <button id="btn" onclick="myfunction('http://www.dodear.com/webtv/?serverpath=http://webtv.dodear.asia:88/humnewshd/index.m3u8')">Hum News</button>
+        <button id="btn" onclick="myfunction('http://www.dodear.com/webtv/?serverpath=http://webtv.dodear.asia:88/humnewshd/index.m3u8')">A Sports</button>
+    </div>
+
+    <script>
+        function myfunction(url) {
+            const videoContainer = document.getElementById("video-container");
+            const video = document.getElementById("video");
+
+            // Set the video URL and make the video container visible
+            video.src = url;
+            videoContainer.style.display = "block";
+            video.play();
+        }
+    </script>
+</body>
+</html> -->
