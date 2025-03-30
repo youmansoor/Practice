@@ -1,0 +1,146 @@
+<!-- <!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Akinator Game</title>
+  <style>
+    .button {
+      padding: 10px 20px;
+      margin: 10px;
+      font-size: 16px;
+      cursor: pointer;
+    }
+    #question {
+      font-size: 20px;
+      margin-top: 20px;
+    }
+    #response {
+      margin-top: 20px;
+    }
+  </style>
+</head>
+<body>
+  <h1>Guess the Character</h1>
+  <div id="question">Is your character a human?</div>
+  <button class="button" id="yesButton">Yes</button>
+  <button class="button" id="noButton">No</button>
+  
+  <div id="response"></div>
+
+  <script>
+    // A simple question tree structure.
+const questions = {
+  question: "Is your character a human?",
+  yes: {
+    question: "Is your character famous?",
+    yes: { guess: "Albert Einstein" },
+    no: { guess: "A random person" }
+  },
+  no: {
+    question: "Is your character an animal?",
+    yes: { guess: "Elephant" },
+    no: { guess: "Robot" }
+  }
+};
+
+// Initialize the game state
+let currentNode = questions;
+
+function askQuestion(node) {
+  if (node.guess) {
+    document.getElementById("question").innerText = `I guess your character is: ${node.guess}!`;
+    document.getElementById("yesButton").style.display = 'none';
+    document.getElementById("noButton").style.display = 'none';
+    document.getElementById("response").innerText = "Thanks for playing!";
+  } else {
+    document.getElementById("question").innerText = node.question;
+  }
+}
+
+function handleAnswer(answer) {
+  if (answer === "yes" && currentNode.yes) {
+    currentNode = currentNode.yes;
+  } else if (answer === "no" && currentNode.no) {
+    currentNode = currentNode.no;
+  }
+  askQuestion(currentNode);
+}
+
+// Event listeners for the buttons
+document.getElementById("yesButton").addEventListener("click", function() {
+  handleAnswer("yes");
+});
+
+document.getElementById("noButton").addEventListener("click", function() {
+  handleAnswer("no");
+});
+
+// Start the game by asking the first question
+askQuestion(currentNode);
+
+  </script>
+</body>
+</html> -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h1>Question</h1>
+    <p id="Ques">What is the capital of India?</p>
+    <input type="text" id="answer1">
+    <button onclick="checkAnswer(questions, document.getElementById('answer1').value)">Submit</button>
+    <h3 id="result"></h3>
+    <script>
+        class question {
+            constructor(question, answer) {
+                this.question = question;
+                this.answer = answer;
+            }
+        }
+        
+        let q1 = new question("What is the capital of India?", "Delhi");
+        let q2 = new question("What is the capital of USA?", "Washington DC");
+        let q3 = new question("What is the capital of UK?", "London");
+        let q4 = new question("What is the capital of Australia?", "Canberra");
+        let q5 = new question("What is the capital of Japan?", "Tokyo");
+        let q6 = new question("What is the capital of China?", "Beijing");
+        let q7 = new question("What is the capital of Russia?", "Moscow");
+        let q8 = new question("What is the capital of France?", "Paris");
+        let q9 = new question("What is the capital of Germany?", "Berlin");
+        let q10 = new question("What is the capital of Brazil?", "Brasilia");
+        let questions = [q1, q2, q3, q4, q5, q6, q7, q8, q9, q10];
+        let currentQuestion = 0;
+        let score = 0;
+
+        function checkAnswer(questions, answer) {
+            // Check if the answer is correct
+            if (questions[currentQuestion].answer.toLowerCase() === answer.toLowerCase().trim()) {
+                score++;
+                console.log("Correct Answer");
+            } else {
+                console.log("Wrong Answer");
+            }
+            
+            // Move to the next question
+            currentQuestion++;
+
+            // If there are more questions, show the next question
+            if (currentQuestion < questions.length) {
+                document.getElementById('Ques').innerText = questions[currentQuestion].question;
+                document.getElementById('answer1').value = '';  // Clear the input field
+            } else {
+                // If no more questions, show the result
+                document.getElementById('result').innerText = `Your score: ${score} / ${questions.length}`;
+                document.getElementById('answer1').disabled = true;  // Disable input
+                document.querySelector('button').disabled = true;  // Disable button
+            }
+        }
+    </script>
+</body>
+</html>
+

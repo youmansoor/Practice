@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Akinator Game</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            background-color: #f0f0f0;
+        }
+        .container {
+            text-align: center;
+            background: white;
+            padding: 20px;
+            border-radius: 10px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        }
+        .question {
+            font-size: 1.5em;
+            margin-bottom: 20px;
+        }
+        .buttons {
+            display: flex;
+            justify-content: center;
+            gap: 10px;
+        }
+        .buttons button {
+            padding: 10px 20px;
+            font-size: 1em;
+            cursor: pointer;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="question" id="question">Is it an animal?</div>
+        <div class="buttons">
+            <button onclick="answer('yes')">Yes</button>
+            <button onclick="answer('no')">No</button>
+        </div>
+    </div>
+
+    <script>
+        const questions = [
+            "Is it an animal?",
+            "Is it a mammal?",
+            "Does it have four legs?",
+            "Is it a domestic animal?",
+            "Is it a dog?"
+        ];
+
+        let currentQuestion = 0;
+
+        function answer(response) {
+            if (currentQuestion < questions.length - 1) {
+                currentQuestion++;
+                document.getElementById('question').innerText = questions[currentQuestion];
+            } else {
+                document.getElementById('question').innerText = response === 'yes' ? "I guessed it!" : "I give up!";
+                document.querySelector('.buttons').style.display = 'none';
+            }
+        }
+    </script>
+</body>
+</html>
